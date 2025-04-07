@@ -5,7 +5,6 @@ import { Fraction } from '../classes/fraction';
   providedIn: 'root'
 })
 export class FractionService {
-  // Greatest Common Divisor (GCD) for reduction
   private gcd(a: number, b: number): number {
     a = Math.abs(a);
     b = Math.abs(b);
@@ -17,7 +16,6 @@ export class FractionService {
     return a;
   }
 
-  // Reduce a fraction
   reduce(fraction: Fraction): Fraction {
     const divisor = this.gcd(fraction.numerator, fraction.denominator);
     return {
@@ -26,7 +24,6 @@ export class FractionService {
     };
   }
 
-  // Addition
   add(f1: Fraction, f2: Fraction): Fraction {
     const result = {
       numerator: f1.numerator * f2.denominator + f2.numerator * f1.denominator,
@@ -35,7 +32,6 @@ export class FractionService {
     return this.reduce(result);
   }
 
-  // Subtraction
   subtract(f1: Fraction, f2: Fraction): Fraction {
     const result = {
       numerator: f1.numerator * f2.denominator - f2.numerator * f1.denominator,
@@ -44,7 +40,6 @@ export class FractionService {
     return this.reduce(result);
   }
 
-  // Multiplication
   multiply(f1: Fraction, f2: Fraction): Fraction {
     const result = {
       numerator: f1.numerator * f2.numerator,
@@ -53,7 +48,6 @@ export class FractionService {
     return this.reduce(result);
   }
 
-  // Division
   divide(f1: Fraction, f2: Fraction): Fraction {
     const result = {
       numerator: f1.numerator * f2.denominator,

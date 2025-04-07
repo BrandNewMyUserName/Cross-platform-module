@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { IonicModule } from '@ionic/angular';
 import { ReactiveFormsModule, FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Fraction } from '../classes/fraction';
+import { nonZeroValidator } from '../classes/nonZeroValidator';
 
 @Component({
   selector: 'app-fraction-input',
@@ -23,13 +24,21 @@ export class FractionInputComponent {
   constructor(private fb: FormBuilder) {
     this.fractionForm = this.fb.group({
       numerator1: [0, [Validators.required, Validators.pattern('^-?[0-9]*$')]],
-      denominator1: [1, [Validators.required, Validators.min(1), Validators.pattern('^[0-9]*$')]],
+      denominator1: [1, [
+        Validators.required,
+        Validators.pattern('^-?[0-9]*$'),
+        nonZeroValidator
+      ]],
       numerator2: [0, [Validators.required, Validators.pattern('^-?[0-9]*$')]],
-      denominator2: [1, [Validators.required, Validators.min(1), Validators.pattern('^[0-9]*$')]],
+      denominator2: [1, [
+        Validators.required,
+        Validators.pattern('^-?[0-9]*$'),
+        nonZeroValidator
+      ]],
       operation: ['add', Validators.required]
     });
   }
-
+  
   onSubmit() {
     if (this.fractionForm.valid) {
       const { numerator1, denominator1, numerator2, denominator2, operation } = this.fractionForm.value;
@@ -39,3 +48,5 @@ export class FractionInputComponent {
     }
   }
 }
+
+

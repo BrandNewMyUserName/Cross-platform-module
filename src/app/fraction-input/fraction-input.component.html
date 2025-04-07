@@ -6,19 +6,19 @@
     <form [formGroup]="fractionForm" (ngSubmit)="onSubmit()">
       <ion-item>
         <ion-label position="floating">Numerator 1</ion-label>
-        <ion-input formControlName="numerator1" type="number"></ion-input>
+        <ion-input formControlName="numerator1" type="number" errorText="Помилка! Введіть правильне значення"></ion-input>
       </ion-item>
       <ion-item>
         <ion-label position="floating">Denominator 1</ion-label>
-        <ion-input formControlName="denominator1" type="number"></ion-input>
+        <ion-input formControlName="denominator1" type="number" errorText="Помилка! Введіть правильне значення"></ion-input>
       </ion-item>
       <ion-item>
         <ion-label position="floating">Numerator 2</ion-label>
-        <ion-input formControlName="numerator2" type="number"></ion-input>
+        <ion-input formControlName="numerator2" type="number" errorText="Помилка! Введіть правильне значення"></ion-input>
       </ion-item>
       <ion-item>
         <ion-label position="floating">Denominator 2</ion-label>
-        <ion-input formControlName="denominator2" type="number"></ion-input>
+        <ion-input formControlName="denominator2" type="number" errorText="Помилка! Введіть правильне значення"></ion-input>
       </ion-item>
       <ion-item>
         <ion-label>Operation</ion-label>
