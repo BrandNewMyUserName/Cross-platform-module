@@ -1,0 +1,7 @@
+{
+  "name": "fractionCalculationsApp",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular-standalone"
+}
