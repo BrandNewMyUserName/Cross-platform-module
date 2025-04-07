@@ -1,0 +1,35 @@
+<ion-card>
+  <ion-card-header>
+    <ion-card-title>Enter Fractions</ion-card-title>
+  </ion-card-header>
+  <ion-card-content>
+    <form [formGroup]="fractionForm" (ngSubmit)="onSubmit()">
+      <ion-item>
+        <ion-label position="floating">Numerator 1</ion-label>
+        <ion-input formControlName="numerator1" type="number"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="floating">Denominator 1</ion-label>
+        <ion-input formControlName="denominator1" type="number"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="floating">Numerator 2</ion-label>
+        <ion-input formControlName="numerator2" type="number"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="floating">Denominator 2</ion-label>
+        <ion-input formControlName="denominator2" type="number"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label>Operation</ion-label>
+        <ion-select formControlName="operation">
+          <ion-select-option value="add">Add</ion-select-option>
+          <ion-select-option value="subtract">Subtract</ion-select-option>
+          <ion-select-option value="multiply">Multiply</ion-select-option>
+          <ion-select-option value="divide">Divide</ion-select-option>
+        </ion-select>
+      </ion-item>
+      <ion-button type="submit" expand="block" [disabled]="fractionForm.invalid">Calculate</ion-button>
+    </form>
+  </ion-card-content>
+</ion-card>
